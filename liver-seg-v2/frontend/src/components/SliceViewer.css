@@ -1,0 +1,342 @@
+/* SliceViewer.css — Final Production Version */
+
+.sv-root {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+  height: 100%;
+  padding: 14px;
+  box-sizing: border-box;
+  overflow: hidden;
+  background: #080b12;
+  border-radius: 16px;
+}
+
+.sv-empty {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  font-size: 0.85rem;
+}
+
+/* Topbar */
+.sv-topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  background: #0d1117;
+  border-bottom: 1px solid #1e2a3a;
+}
+
+.sv-topbar-left {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.sv-volume-name {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--accent);
+  background: rgba(200,90,122,.08);
+  border: 1px solid rgba(200,90,122,.22);
+  padding: 3px 8px;
+  border-radius: 6px;
+  max-width: 220px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.sv-slice-label {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  color: var(--text-primary);
+}
+
+.sv-slice-total { color: var(--text-muted); }
+
+/* Tabs */
+.sv-tabs {
+  display: flex;
+  gap: 6px;
+  padding: 4px 0 8px;
+  margin-bottom: 8px;
+  border-bottom: 1px solid rgba(255,255,255,.06);
+}
+
+.sv-tab {
+  padding: 5px 18px;
+  border-radius: 999px;
+  font-size: 0.73rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  cursor: pointer;
+  border: 1px solid rgba(255,255,255,.08);
+  background: transparent;
+  color: #475569;
+  transition: .15s ease;
+}
+
+.sv-tab:hover {
+  border-color: rgba(200,90,122,.35);
+  color: #94a3b8;
+  background: rgba(200,90,122,.05);
+}
+
+.sv-tab-active {
+  color: #c85a7a;
+  background: rgba(200,90,122,.12);
+  border-color: rgba(200,90,122,.45);
+}
+
+/* Panels */
+.sv-panels {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  flex: 1;
+  min-height: 0;
+}
+
+.sv-panel {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-height: 0;
+}
+
+.sv-panel-label,
+.sv-chart-label {
+  font-size: 0.66rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: .08em;
+  color: var(--text-muted);
+}
+
+.sv-panel-toprow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* Badges */
+.sv-badges { display: flex; gap: 6px; flex: 1; }
+
+.sv-badge {
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.sv-badge-tumor {
+  color: #ff6060;
+  background: rgba(255,40,40,.14);
+  border: 1px solid rgba(255,40,40,.28);
+}
+
+.sv-badge-liver {
+  color: #32dcc8;
+  background: rgba(50,220,200,.12);
+  border: 1px solid rgba(50,220,200,.25);
+}
+
+/* Buttons */
+.sv-jump-btn,
+.sv-save-btn {
+  cursor: pointer;
+  border-radius: 7px;
+  font-size: .75rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  transition: .15s ease;
+}
+
+.sv-jump-btn {
+  border: 1px solid rgba(255,40,40,.28);
+  color: #ff6060;
+  background: rgba(255,40,40,.10);
+}
+
+.sv-jump-btn:hover {
+  background: rgba(255,40,40,.18);
+}
+
+.sv-save-btn {
+  border: 1px solid rgba(200,90,122,.38);
+  color: #c85a7a;
+  background: rgba(200,90,122,.08);
+}
+
+.sv-save-btn:hover {
+  background: rgba(200,90,122,.18);
+}
+
+/* Image */
+.sv-img-wrap {
+  position: relative;
+  flex: 1;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
+}
+
+.sv-img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  image-rendering: pixelated;
+}
+
+.sv-img-hidden { opacity: 0; }
+
+/* Slider */
+.sv-slider-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sv-slider-num {
+  min-width: 24px;
+  text-align: center;
+  font-size: .7rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.sv-slider {
+  flex: 1;
+  height: 4px;
+  appearance: none;
+  background: #1e293b;
+  border-radius: 999px;
+}
+
+.sv-slider::-webkit-slider-thumb {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--accent);
+  cursor: pointer;
+}
+
+/* Chart */
+.sv-chart {
+  height: 44px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sv-chart-bars {
+  flex: 1;
+  display: flex;
+  align-items: flex-end;
+  gap: 1px;
+}
+
+.sv-bar {
+  flex: 1;
+  min-width: 2px;
+  border-radius: 2px 2px 0 0;
+}
+
+.sv-bar-empty { background: #1e293b; }
+.sv-bar-tumor { background: rgba(255,60,60,.72); }
+.sv-bar-active { background: var(--accent) !important; }
+
+/* Stats */
+.sv-stats-row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding-top: 6px;
+  border-top: 1px solid rgba(255,255,255,.06);
+}
+
+.sv-stat {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: .72rem;
+  color: var(--text-muted);
+  font-family: var(--font-mono);
+}
+
+.sv-stat-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.sv-dot-liver { background: #32dcc8; }
+.sv-dot-tumor { background: #ff4040; }
+
+.sv-stat-hint {
+  margin-left: auto;
+  color: #334155;
+  font-size: .68rem;
+}
+
+/* Download panel */
+.sv-download-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+}
+
+.sv-save-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #8b949e;
+  font-family: var(--font-mono);
+}
+
+.sv-save-saving { color: #58a6ff; }
+.sv-save-error { color: #f87171; }
+.sv-save-ok { color: #4ade80; font-weight: 700; }
+
+.sv-save-link {
+  border: 0;
+  background: none;
+  color: #58a6ff;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.sv-save-result {
+  min-width: 300px;
+  max-width: 480px;
+  padding: 10px 14px;
+  border-radius: 8px;
+  border: 1px solid #1e2a3a;
+  background: #0d1117;
+  font-size: 11px;
+  font-family: var(--font-mono);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .sv-panels { grid-template-columns: 1fr; }
+  .sv-volume-name { max-width: 120px; }
+  .sv-topbar { padding: 10px; }
+}

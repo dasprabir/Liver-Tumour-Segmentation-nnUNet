@@ -1,0 +1,15 @@
+# requirements-demo.txt
+# ---------------------
+# Demo-only lightweight backend
+# No torch / nnUNet required
+#
+# Python: 3.9+
+
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.1
+python-multipart>=0.0.9
+
+numpy>=1.26.0
+nibabel>=5.2.1
+Pillow>=10.0.0
+aiofiles>=23.2.1

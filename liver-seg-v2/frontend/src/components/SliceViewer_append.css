@@ -1,0 +1,152 @@
+/* ── Download Results panel (appended) ─────────────────────────── */
+
+.sv-topbar {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  padding: 10px 16px;
+  background: #0d1117;
+  border-bottom: 1px solid #1e2a3a;
+}
+
+.sv-topbar-left {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.sv-download-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  min-width: 0;
+}
+
+.sv-save-btn {
+  padding: 5px 14px;
+  border-radius: 7px;
+  border: 1px solid rgba(200, 90, 122, .4);
+  background: rgba(200, 90, 122, .08);
+  color: #c85a7a;
+  font-size: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  font-family: inherit;
+  transition: all 0.15s;
+  white-space: nowrap;
+}
+.sv-save-btn:hover {
+  background: rgba(200, 90, 122, .18);
+  border-color: #c85a7a;
+  color: #e87a9a;
+}
+
+.sv-save-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+  color: #8b949e;
+  font-family: 'JetBrains Mono', monospace;
+}
+.sv-save-saving { color: #58a6ff; }
+.sv-save-error  { color: #f87171; }
+.sv-save-ok     { color: #4ade80; font-weight: 600; }
+
+.sv-save-link {
+  background: none;
+  border: none;
+  color: #58a6ff;
+  cursor: pointer;
+  font-size: 11px;
+  font-family: inherit;
+  padding: 0;
+  text-decoration: underline;
+}
+
+@keyframes sv-spin {
+  to { transform: rotate(360deg); }
+}
+.sv-save-spinner {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border: 2px solid #1e2a3a;
+  border-top-color: #58a6ff;
+  border-radius: 50%;
+  animation: sv-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+.sv-save-result {
+  background: #0d1117;
+  border: 1px solid #1e2a3a;
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 11px;
+  font-family: 'JetBrains Mono', monospace;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 300px;
+  max-width: 480px;
+}
+
+.sv-save-result-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sv-save-folder {
+  color: #58a6ff;
+  font-size: 10px;
+  word-break: break-all;
+  background: #161b22;
+  border-radius: 4px;
+  padding: 4px 8px;
+}
+
+.sv-save-files {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.sv-save-file-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+}
+
+.sv-save-file-label {
+  color: #8b949e;
+  min-width: 90px;
+  flex-shrink: 0;
+}
+
+.sv-save-file-path {
+  color: #c9d1d9;
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.sv-save-file-size {
+  color: #6e7681;
+  flex-shrink: 0;
+}
+
+.sv-save-total {
+  color: #8b949e;
+  font-size: 10px;
+  text-align: right;
+  border-top: 1px solid #1e2a3a;
+  padding-top: 5px;
+  margin-top: 2px;
+}

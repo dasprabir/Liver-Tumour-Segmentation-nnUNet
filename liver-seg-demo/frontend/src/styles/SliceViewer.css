@@ -1,0 +1,155 @@
+.sv-root {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+    background: #080b12;
+    border-radius: 16px;
+    padding: 14px;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+
+.sv-topbar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.sv-volume-name {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.sv-slice-label {
+    font-size: 0.82rem;
+    font-family: var(--font-mono);
+}
+
+.sv-slice-total {
+    color: var(--text-muted);
+}
+
+
+
+.sv-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    min-height: 0;
+}
+
+.sv-panel-label {
+    font-size: 0.67rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--text-muted);
+}
+
+.sv-img-wrap {
+    flex: 1;
+    background: #000;
+    border-radius: 8px;
+    overflow: hidden;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+}
+
+.sv-img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+}
+
+.sv-slider-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.sv-slider-num {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-muted);
+    min-width: 24px;
+    text-align: center;
+}
+
+.sv-slider {
+    flex: 1;
+    height: 4px;
+    appearance: none;
+    background: #1e293b;
+    border-radius: 99px;
+}
+
+.sv-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+.sv-panels {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+}
+
+.sv-iframe {
+    width: 100%;
+    height: 70vh;
+    border: none;
+}
+
+.sv-stats {
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 14px;
+    margin-top: 14px;
+}
+
+.sv-card {
+    background: #0f141c;
+    border: 1px solid rgba(255,255,255,.08);
+    padding: 14px 18px;
+    border-radius: 12px;
+    font-family: var(--font-mono);
+}
+
+.dot {
+    display:inline-block;
+    width:8px;
+    height:8px;
+    border-radius:50%;
+    margin-right:8px;
+}
+
+.dot.liver { background:#2dd4bf; }
+.dot.tumor { background:#ef4444; }
+.dot.slices { background:#f59e0b; }
+.dot.total { background:#94a3b8; }
+
+.sv-card-label {
+    color: var(--text-muted);
+    margin-left: 6px;
+}
+
+.sv-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+}
+
+.sv-dot.liver { background: #2dd4bf; }
+.sv-dot.tumor { background: #ef4444; }
+.sv-dot.slices { background: #f59e0b; }
+.sv-dot.total { background: #94a3b8; }

@@ -1,0 +1,24 @@
+# requirements.txt
+# ----------------
+# LiverSeg full inference backend
+#
+# Python: 3.10 recommended
+# Works: 3.9 – 3.11
+#
+# IMPORTANT:
+# torch + torchvision + nnunetv2 are installed separately
+# by setup_full.bat with correct CUDA version.
+# Do NOT add them here.
+
+fastapi>=0.111.0
+uvicorn[standard]>=0.30.1
+python-multipart>=0.0.9
+
+nibabel>=5.2.1
+numpy>=1.26.0
+scikit-image>=0.23.2
+scipy>=1.13.1
+
+python-dotenv>=1.0.1
+aiofiles>=23.2.1
+Pillow>=10.0.0

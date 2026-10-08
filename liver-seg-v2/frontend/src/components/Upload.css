@@ -1,0 +1,205 @@
+/* Upload.css */
+
+.upload-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    max-width: 540px;
+    margin: 0 auto;
+}
+
+/* ---- Drop zone ---- */
+.drop-zone {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    padding: 48px 32px;
+    border: 1.5px dashed var(--border);
+    border-radius: 16px;
+    background: var(--surface);
+    cursor: pointer;
+    transition: border-color 0.2s, background 0.2s, transform 0.15s;
+    user-select: none;
+}
+
+.drop-zone:hover {
+    border-color: var(--accent);
+    background: var(--surface-hover);
+}
+
+.drop-zone:focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+}
+
+.drop-zone.drag-over {
+    border-color: var(--accent);
+    background: var(--accent-subtle);
+    transform: scale(1.01);
+}
+
+.drop-zone.has-file {
+    border-style: solid;
+    border-color: var(--accent);
+}
+
+.drop-zone.has-error {
+    border-color: var(--error);
+    background: var(--error-subtle);
+}
+
+.hidden-input {
+    display: none;
+}
+
+/* ---- Icons ---- */
+.icon-scan,
+.icon-check,
+.icon-error {
+    width: 56px;
+    height: 56px;
+    color: var(--accent);
+}
+
+.icon-error {
+    color: var(--error);
+}
+
+.icon-error-small {
+    width: 16px;
+    height: 16px;
+    color: var(--error);
+    flex-shrink: 0;
+}
+
+@keyframes spin-slow {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.icon-scan.spinning {
+    animation: spin-slow 2.5s linear infinite;
+}
+
+.icon-check {
+    color: var(--success);
+}
+
+/* ---- Labels ---- */
+.drop-phase-label {
+    font-size: 1.05rem;
+    font-weight: 600;
+    color: var(--text-primary);
+    letter-spacing: -0.01em;
+    margin: 0;
+}
+
+.file-meta {
+    font-size: 0.82rem;
+    color: var(--text-muted);
+    margin: 0;
+    font-family: var(--font-mono);
+}
+
+/* ---- Progress bar ---- */
+.progress-bar-track {
+    width: 100%;
+    height: 4px;
+    background: var(--border);
+    border-radius: 99px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 99px;
+    transition: width 0.3s ease;
+}
+
+@keyframes indeterminate {
+    0% {
+        transform: translateX(-100%) scaleX(0.5);
+    }
+
+    100% {
+        transform: translateX(200%) scaleX(0.5);
+    }
+}
+
+.progress-bar-fill.indeterminate {
+    width: 50% !important;
+    animation: indeterminate 1.3s ease infinite;
+}
+
+/* ---- Error banner ---- */
+.error-banner {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 16px;
+    background: var(--error-subtle);
+    border: 1px solid var(--error);
+    border-radius: 10px;
+    font-size: 0.85rem;
+    color: var(--error);
+}
+
+/* ---- Buttons ---- */
+.upload-actions {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 28px;
+    border-radius: 10px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: opacity 0.15s, transform 0.1s;
+    letter-spacing: 0.01em;
+}
+
+.btn:active {
+    transform: scale(0.97);
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: #fff;
+}
+
+.btn-primary:hover {
+    opacity: 0.88;
+}
+
+.btn-secondary {
+    background: var(--surface);
+    color: var(--text-primary);
+    border: 1.5px solid var(--border);
+}
+
+.btn-secondary:hover {
+    background: var(--surface-hover);
+}
+
+.btn-outline {
+    background: transparent;
+    color: var(--accent);
+    border: 1.5px solid var(--accent);
+}
+
+.btn-outline:hover {
+    background: var(--accent-subtle);
+}

@@ -1,0 +1,75 @@
+/* App.css – global styles and design tokens */
+
+/* ---- Google Fonts ---- */
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap');
+
+/* ---- Design tokens ---- */
+:root {
+    /* Palette */
+    --accent: #c85a7a;
+    --accent-subtle: rgba(200, 90, 122, 0.08);
+    --success: #22c55e;
+    --error: #ef4444;
+    --error-subtle: rgba(239, 68, 68, 0.07);
+
+    /* Surfaces */
+    --bg: #080a10;
+    --surface: #0f1219;
+    --surface-hover: #161c27;
+
+    /* Borders */
+    --border: rgba(255, 255, 255, 0.08);
+
+    /* Text */
+    --text-primary: #f1f5f9;
+    --text-muted: #64748b;
+
+    /* Typography */
+    --font-sans: 'Space Grotesk', system-ui, sans-serif;
+    --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+}
+
+/* ---- Reset ---- */
+*,
+*::before,
+*::after {
+    box-sizing: border;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-sans);
+    background: var(--bg);
+    color: var(--text-primary);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg);
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 99px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+/* ---- Utility ---- */
+code {
+    font-family: var(--font-mono);
+}

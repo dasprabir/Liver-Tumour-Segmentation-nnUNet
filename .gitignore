@@ -1,0 +1,94 @@
+# =====================
+# Output & Result Files
+# =====================
+backend/resultsTs/
+*.html
+
+# =============
+# Model Weights
+# =============
+*.pth
+*.pt
+*.ckpt
+*.pkl
+models/
+nnUNet_raw/
+nnUNet_preprocessed/
+nnUNet_results/
+
+# ============
+# Medical Data
+# ============
+*.nii
+*.nii.gz
+*.dcm
+*.mha
+*.npy
+*.npz
+data/
+
+# ==================
+# Python Environment
+# ==================
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+venv/
+env/
+.env/
+.venv/
+*.egg-info/
+dist/
+build/
+.pytest_cache/
+
+# ===================
+# Frontend / Node
+# ===================
+node_modules/
+dist/
+.next/
+.nuxt/
+
+# ====================
+# Environment & Secrets
+# ====================
+.env
+.env.local
+.env.*.local
+*.secret
+
+# ======
+# Editor
+# ======
+.vscode/
+.idea/
+*.swp
+*.swo
+.DS_Store
+Thumbs.db
+
+# =======
+# Jupyter
+# =======
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# ======
+# Logs
+# ======
+*.log
+logs/
+
+# =====================
+# Caches
+# =====================
+.mypy_cache/
+.cache/
+
+# =====================
+# Demo generated results
+# =====================
+**/resultsTs/

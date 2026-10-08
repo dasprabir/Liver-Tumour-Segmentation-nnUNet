@@ -1,0 +1,215 @@
+/* Viewer3D.css — controls below canvas, not overlaid */
+
+.v3d-root {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    background: #080b12;
+    border-radius: 16px;
+    overflow: hidden;
+}
+
+/* ── Canvas takes all remaining space ── */
+.v3d-canvas {
+    flex: 1;
+    min-height: 0;
+    width: 100%;
+}
+
+.v3d-canvas canvas {
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+}
+
+/* ── Legend overlaid bottom-left of canvas ── */
+.v3d-legend {
+    position: absolute;
+    bottom: 52px;   /* just above the controls strip */
+    left: 12px;
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.v3d-legend-item {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 0.72rem;
+    color: #94a3b8;
+    background: rgba(8, 11, 18, 0.75);
+    backdrop-filter: blur(6px);
+    padding: 4px 8px;
+    border-radius: 6px;
+    border: 1px solid rgba(255,255,255,0.06);
+}
+
+.v3d-swatch {
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+}
+
+.v3d-swatch-liver {
+    background: rgba(14, 158, 156, 0.7);
+    border: 1px solid #0e9e9c;
+}
+
+.v3d-swatch-tumor {
+    background: rgba(255, 32, 32, 0.8);
+    border: 1px solid #ff2020;
+}
+
+/* ── Controls strip — horizontal bar BELOW canvas ── */
+.v3d-controls {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    gap: 0;
+    padding: 8px 14px;
+    background: rgba(10, 13, 20, 0.95);
+    border-top: 1px solid rgba(255,255,255,0.07);
+    flex-wrap: wrap;
+    row-gap: 6px;
+}
+
+.v3d-ctrl-group {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.v3d-divider {
+    width: 1px;
+    height: 20px;
+    background: rgba(255,255,255,0.07);
+    margin: 0 10px;
+    flex-shrink: 0;
+}
+
+.v3d-toggle {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    user-select: none;
+    font-size: 0.78rem;
+    color: var(--text-muted);
+    white-space: nowrap;
+}
+
+.v3d-toggle input[type="checkbox"] {
+    appearance: none;
+    width: 13px;
+    height: 13px;
+    border: 1.5px solid #475569;
+    border-radius: 3px;
+    cursor: pointer;
+    position: relative;
+    flex-shrink: 0;
+}
+
+.v3d-toggle input[type="checkbox"]:checked {
+    background: var(--accent);
+    border-color: var(--accent);
+}
+
+.v3d-toggle input[type="checkbox"]:checked::after {
+    content: "✓";
+    position: absolute;
+    font-size: 9px;
+    top: -1px;
+    left: 1px;
+    color: #fff;
+}
+
+.v3d-dot {
+    width: 9px;
+    height: 9px;
+    border-radius: 50%;
+    flex-shrink: 0;
+}
+
+.v3d-dot-liver  { background: #0e9e9c; }
+.v3d-dot-tumor  { background: #ff2020; }
+.v3d-dot-wire   { background: #60a5fa; }
+.v3d-dot-rotate { background: #a78bfa; }
+
+/* Opacity slider inline */
+.v3d-opacity-row {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.v3d-slider {
+    width: 72px;
+    height: 3px;
+    appearance: none;
+    background: #1e293b;
+    border-radius: 99px;
+    cursor: pointer;
+    outline: none;
+}
+
+.v3d-slider::-webkit-slider-thumb {
+    appearance: none;
+    width: 11px;
+    height: 11px;
+    border-radius: 50%;
+    background: var(--accent);
+    cursor: pointer;
+}
+
+.v3d-slider:disabled {
+    opacity: 0.3;
+    cursor: not-allowed;
+}
+
+.v3d-slider-val {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: #64748b;
+    min-width: 28px;
+}
+
+/* Stats */
+.v3d-stats {
+    display: flex;
+    gap: 14px;
+    flex-wrap: wrap;
+    margin-left: auto;
+}
+
+.v3d-stat {
+    font-size: 0.72rem;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.v3d-stat-val {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    color: #475569;
+}
+
+.liver-color { color: #2dd4d4; }
+.tumor-color { color: #ff6060; }
+
+.v3d-hint {
+    font-size: 0.65rem;
+    color: #334155;
+    margin-left: 12px;
+    white-space: nowrap;
+}
+
+@media (max-width: 700px) {
+    .v3d-stats { display: none; }
+    .v3d-hint  { display: none; }
+}

@@ -1,0 +1,136 @@
+/* Beta3D.css */
+
+.b3d-root {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: var(--bg);
+}
+
+/* ── Header ── */
+.b3d-header {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(8,10,16,0.88);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid var(--border);
+}
+
+.b3d-header-inner {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.b3d-logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--text-primary);
+    letter-spacing: -0.03em;
+}
+.b3d-accent { color: var(--accent); }
+
+.b3d-header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.b3d-vol {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    color: var(--accent);
+    background: rgba(200,90,122,0.08);
+    border: 1px solid rgba(200,90,122,0.2);
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.b3d-beta-badge {
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 2px 7px;
+    border-radius: 99px;
+    background: rgba(245,158,11,0.15);
+    color: #f59e0b;
+    border: 1px solid rgba(245,158,11,0.3);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+}
+
+.b3d-back {
+    background: transparent;
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 5px 12px;
+    border-radius: 7px;
+    font-size: 0.82rem;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    transition: background 0.15s;
+}
+.b3d-back:hover { background: var(--surface-hover); }
+
+/* ── Main ── */
+.b3d-main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 24px;
+    max-width: 1400px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.b3d-viewer-wrap {
+    flex: 1;
+    min-height: 500px;
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+}
+
+/* ── States ── */
+.b3d-center {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    min-height: 400px;
+}
+
+.b3d-error { color: #ff6060; }
+.b3d-hint  { font-size: 0.78rem; color: var(--text-muted); text-align: center; max-width: 400px; }
+
+.b3d-spinner {
+    width: 36px;
+    height: 36px;
+    border: 3px solid rgba(255,255,255,0.1);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: b3d-spin 0.9s linear infinite;
+}
+@keyframes b3d-spin { to { transform: rotate(360deg); } }
+
+/* ── Footer ── */
+.b3d-footer {
+    border-top: 1px solid var(--border);
+    padding: 12px 24px;
+    text-align: center;
+    font-size: 0.72rem;
+    color: var(--text-muted);
+}
+.b3d-sep { margin: 0 8px; opacity: 0.4; }
