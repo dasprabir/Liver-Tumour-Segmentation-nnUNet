@@ -4,6 +4,19 @@ A full-stack web application for automated liver and hepatic tumour segmentation
 
 > **Paper:** *Liver Tumor Segmentation Using Deep Learning: A 2.5D U-Net Baseline and nnU-Net 2D Ensemble*
 
+## Conference Acceptance
+
+**Accepted for Oral Presentation** at the **3rd International Conference of Signal Processing and Computer Vision-2026 (SIPCOV-2026)**, held on **8–9 October 2026**.
+
+- **Paper ID:** 28
+- **Presentation type:** Oral Presentation
+- **Paper:** *Liver Tumour Segmentation Using Deep Learning: A 2.5D U-Net Baseline and nnU-Net 2D Ensemble*
+- **Presenter:** Prabir Kumar Das
+- **Conference:** SIPCOV-2026
+- **Dates:** 8–9 October 2026
+
+The presentation reports a four-fold nnU-Net 2D ensemble achieving a **liver Dice of 0.9694** and **tumour Dice of 0.8010** on 24 tumour-positive validation cases.
+
 ---
 
 ## Results
